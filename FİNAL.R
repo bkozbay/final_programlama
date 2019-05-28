@@ -8,7 +8,7 @@ migros <- setRefClass(Class = "migros", fields = c("sube", "icecek", "yiyecek", 
   }))
     show = function(){
       cat("MIGROS:", sube, "\n",
-          "IÇECEK:", icecek, "|",
+          "IÃ‡ECEK:", icecek, "|",
           "YIYECEK", yiyecek, "|",
           "TEKNOLOJI", teknoloji,"|",
           "BAKIM", bakim,"|")
@@ -16,12 +16,12 @@ migros <- setRefClass(Class = "migros", fields = c("sube", "icecek", "yiyecek", 
   '%+%' <- function(x, ...){
     UseMethod("koru", x)
   }  
-  koru.migros <- function(a,b,c,d){
+  koru.migros <- function(a,b){
     list (
-      ticecek = a$icecek + b$icecek + c$icecek + d$icecek,
-      tyiyeyecek = a$yiyecek + b$yiyecek + c$yiyecek + d$yiyecek,
-      tteknoloji = a$teknoloji + b$teknoloji + c$teknoloji + d$teknoloji,
-      tbakim = a$bakim + b$bakim + c$bakim + d$bakim
+      ticecek = a$icecek + b$icecek, 
+      tyiyeyecek = a$yiyecek + b$yiyecek, 
+      tteknoloji = a$teknoloji + b$teknoloji ,
+      tbakim = a$bakim + b$bakim
     )
   }
 beyazit <- migros$new("Beyazit", 3, 5, 7, 6)
